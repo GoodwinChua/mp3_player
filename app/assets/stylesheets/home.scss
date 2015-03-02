@@ -1,0 +1,33 @@
+div#headphones {
+    background-image: url(/assets/headphones.jpg); 
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    color: #fff;
+}
+
+div#signup{
+    margin-top: 60px;
+    margin-left: 100px;
+    width: 400px;
+    height: 330px;
+    float: left;
+}
+
+div#saxophone{
+    background-image: url(/assets/saxophone.jpg); 
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 550px;
+    color: #fff;
+}
+
+.error{
+    color: #ff748c;
+    vertical-align: middle;
+    padding-right: 10px;
+    text-align: center;
+}
+
+#signup_error{
+    
+}

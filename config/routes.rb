@@ -53,4 +53,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  get 'home' => 'players#home'
+  get 'new_user' => 'players#new_user'
+  get 'mp3' => 'players#mp3'
+  post 'login' => 'players#login_user'
+  post 'register' => 'players#register_user'
+    
 end
