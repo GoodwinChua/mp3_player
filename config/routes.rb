@@ -57,7 +57,9 @@ Rails.application.routes.draw do
   get 'home' => 'players#home'
   get 'new_user' => 'players#new_user'
   get 'mp3' => 'players#mp3'
+  get 'logout' => 'players#logout'
   post 'login' => 'players#login_user'
   post 'register' => 'players#register_user'
+  post 'upload_song' => 'players#upload_song'
     
 end

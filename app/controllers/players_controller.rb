@@ -1,6 +1,12 @@
 class PlayersController < ApplicationController
+    before_action :require_login
+    skip_before_action :require_login, except: :logout
+    
     def home
         @errormessage = params[:error]
+        if session[:user_id]
+            redirect_to '/mp3'
+        end
     end
 
 	def login_user
@@ -10,13 +16,19 @@ class PlayersController < ApplicationController
         authenticated = User.authenticate(e,p)
         
         if authenticated.present?
-            redirect_to action: :mp3
+            session[:user_id] = authenticated.id
+            redirect_to '/mp3'
         else
-            msg = 'Invalid User/Password'
+            msg = 'Invalid Email/Password'
             redirect_to action: :home , :error => msg
         end
         
 	end
+    
+    def logout
+        session[:user_id] = nil
+        redirect_to action: :home
+    end
 
 	def new_user	
         @errormessage = params[:error]
@@ -38,6 +50,15 @@ class PlayersController < ApplicationController
     end
     
     def mp3
-	end
+        if current_user.present?
+            @sessionemail = current_user.email
+        else
+            redirect_to action: :home
+        end
+    end
     
+    def upload_song
+        Song.save_file(params[:upload])
+        redirect_to action: :mp3
+    end
 end
