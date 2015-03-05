@@ -38,11 +38,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href='/home'>Eargasm</a>
+          <a class="navbar-brand" href='/mp3'>Eargasm</a>
           
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <%= form_tag( '/logout' , method: :get, :class => 'navbar-form navbar-right') do %>
+            <%= form_tag( '/logout' , method: :post, :class => 'navbar-form navbar-right') do %>
                 <input type = 'submit' class='btn btn-success' value = 'Sign out' />
             <% end %>
             <a class="navbar-brand"  id = 'session_email' href='/mp3'>  <%= @sessionemail %> </a>
@@ -50,34 +50,125 @@
       </div>
     </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron"  id = 'headphones'>
-      <div class="container" >
-        <%= text_field_tag('songTitle', placeholder: 'Enter Song Title') %>
-        
-      </div>
-    </div>
-
     <div class="container">
+        
       <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="./Jumbotron Template for Bootstrap_files/Jumbotron Template for Bootstrap.html" role="button">View details »</a></p>
+      <div class="row ">
+
+        <div class="col-md-6">
+            <%= form_tag('/upload', method: :post, multipart: :true) do %>
+            <%= file_field 'upload', 'datafile', class: 'filestyle' %>
+            <%= submit_tag "Upload", class: 'btn btn-default' %>
+            <% end %>
+            
+            <div class="div-table-content" id = 'songstable'>
+                <table class="table table-hover" style="table-layout:fixed">
+                    <thead>
+                        <th>Song Title</th>
+                        <th>Artist</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                    <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                    <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+
+                    </tr>
+                     <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                        <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr><tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr><tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr><tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr><tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr><tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                          <tr>
+                        <td class="filterable-cell">Ford</td>
+                        <td class="filterable-cell">Escort</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>          
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <h2>Heading</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-default" href="./Jumbotron Template for Bootstrap_files/Jumbotron Template for Bootstrap.html" role="button">View details »</a></p>
        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="./Jumbotron Template for Bootstrap_files/Jumbotron Template for Bootstrap.html" role="button">View details »</a></p>
-        </div>
+          
       </div>
 
+    
       <hr>
 
       <footer>
@@ -93,7 +184,7 @@
     <script src="./Jumbotron Template for Bootstrap_files/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Jumbotron Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
-  
+    <script type="text/javascript" src="bootstrap-filestyle.min.js"> </script>
 
 </body></html>
 

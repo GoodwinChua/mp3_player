@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
     has_many :playlists
+    has_many :songs
     
     def self.create_user(email, password, password_confirm)
         return false if password != password_confirm
